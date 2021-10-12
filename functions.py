@@ -46,7 +46,7 @@ def all_models(x_train, x_test, y_train, y_test,
 
     return models
 
-def plot_importances(model, title='Feature Importances'):
+def plot_importances(model, vectorizer=vectorizer, title='Feature Importances'):
     importances = sorted(list(zip(model.feature_importances_, vectorizer.get_feature_names())))[-20:]
     plot = pd.DataFrame(importances, columns=['Importance', 'Feature'])
     
